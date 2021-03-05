@@ -9,9 +9,9 @@ class SolicitacaoService {
   //isso, quando aprovado ou reprovado, não muda a quantidade de registros da
   //lista. Localmente funciona. Em breve quando eu mudar o backend
   //para um banco de dados também no azure, aí a experiência estará completa.
-  final String baseAddress = 'http://10.99.10.37/Backend/api/solicitacao';
-  // final String baseAddress =
-  //     'http://solicitacoes.azurewebsites.net/api/solicitacao';
+  //final String baseAddress = 'http://10.99.10.37/Backend/api/solicitacao';
+  final String baseAddress =
+      'http://solicitacoes.azurewebsites.net/api/solicitacao';
 
   Future<List<Solicitacao>> getSolicitacoes() async {
     var dataReturn = await http.get(baseAddress);
