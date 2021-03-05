@@ -23,7 +23,7 @@ class SolicitacaoDetailView extends StatelessWidget {
     Future<void> _showMyDialog(String titulo, String mensagem) async {
       return showDialog<void>(
         context: context,
-        barrierDismissible: false, // user must tap button!
+        barrierDismissible: false, // usuário precisa tocar para fechar!
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(titulo),
