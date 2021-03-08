@@ -1,16 +1,7 @@
-# flutter_navigation
+# Solicitações de desconto
 
-A new Flutter project.
+Projeto piloto para desenvolvimento da versão mobile da Central de Descontos da HCPNEUS
 
-## Getting Started
+## Atenção
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Lembre-se que ao testar no serviço publicado no Azure, a lista é carregada em memória via código de forma estática. O estado da lista não muda, por isso, quando aprovado ou reprovado, não muda a quantidade de registros da lista. Localmente funciona. Em breve quando eu mudar o backend para um banco de dados também no azure, aí a experiência estará completa.
