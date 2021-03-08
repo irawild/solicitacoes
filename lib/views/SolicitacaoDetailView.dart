@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:solicitacoes_desconto/entities/Solicitacao.dart';
+import 'package:solicitacoes_desconto/entities/SolicitacaoPackageData.dart';
 import 'package:solicitacoes_desconto/services/SolicitacaoService.dart';
 import 'package:intl/intl.dart';
 
 class SolicitacaoDetailView extends StatelessWidget {
-  final Solicitacao solicitacao;
+  final SolicitacaoPackageData solicitacao;
   final SolicitacaoService service = SolicitacaoService();
   final NumberFormat formatter = NumberFormat("###########.00");
   final ValueChanged<bool> onCloseView;
@@ -17,8 +18,8 @@ class SolicitacaoDetailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double valorDesconto = solicitacao.valor * solicitacao.desconto / 100;
-    double total = solicitacao.valor - valorDesconto;
+    double valorDesconto = solicitacao.solicitacao.valor * solicitacao.solicitacao.desconto / 100;
+    double total = solicitacao.solicitacao.valor - valorDesconto;
 
     Future<void> _showMyDialog(String titulo, String mensagem) async {
       return showDialog<void>(
@@ -63,7 +64,7 @@ class SolicitacaoDetailView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Loja ${solicitacao.loja}'),
+        title: Text('Loja ${solicitacao.solicitacao.loja}'),
       ),
       body: Center(
         child: Column(
@@ -74,7 +75,7 @@ class SolicitacaoDetailView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    '  ${solicitacao.atuacao}',
+                    '  ${solicitacao.solicitacao.atuacao}',
                     style: Theme.of(context).textTheme.headline6,
                   )
                 ],
@@ -90,7 +91,7 @@ class SolicitacaoDetailView extends StatelessWidget {
                       style: Theme.of(context).textTheme.subtitle2,
                     ),
                     Text(
-                      '${formatter.format(solicitacao.valor)}  ',
+                      '${formatter.format(solicitacao.solicitacao.valor)}  ',
                       style: Theme.of(context).textTheme.subtitle2,
                     )
                   ],
@@ -105,7 +106,7 @@ class SolicitacaoDetailView extends StatelessWidget {
                       style: Theme.of(context).textTheme.subtitle2,
                     ),
                     Text(
-                      '${formatter.format(solicitacao.desconto)}  ',
+                      '${formatter.format(solicitacao.solicitacao.desconto)}  ',
                       style: Theme.of(context).textTheme.subtitle2,
                     )
                   ],
@@ -120,7 +121,7 @@ class SolicitacaoDetailView extends StatelessWidget {
                       style: Theme.of(context).textTheme.subtitle2,
                     ),
                     Text(
-                      '${formatter.format(solicitacao.margemBruta)}  ',
+                      '${formatter.format(solicitacao.solicitacao.margemBruta)}  ',
                       style: Theme.of(context).textTheme.subtitle2,
                     )
                   ],

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:solicitacoes_desconto/entities/Solicitacao.dart';
 import 'package:intl/intl.dart';
+import 'package:solicitacoes_desconto/entities/SolicitacaoPackageData.dart';
 
 class SolicitacaoViewItem extends StatelessWidget {
-  final Solicitacao solicitacao;
-  final ValueChanged<Solicitacao> onTapHandle;
+  final SolicitacaoPackageData solicitacao;
+  final ValueChanged<SolicitacaoPackageData> onTapHandle;
   final NumberFormat formatter = NumberFormat("###########.00");
 
   SolicitacaoViewItem({this.solicitacao, @required this.onTapHandle});
@@ -27,14 +27,15 @@ class SolicitacaoViewItem extends StatelessWidget {
                 leading: CircleAvatar(
                     backgroundColor: Colors.lightBlue,
                     foregroundColor: Colors.yellow,
-                    child: Text('${solicitacao.loja}')),
-                title: Text('${solicitacao.atuacao}'),
+                    child: Text('${solicitacao.solicitacao.loja}')),
+                title: Text('${solicitacao.solicitacao.atuacao}'),
                 subtitle: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                        'Desconto: ${formatter.format(solicitacao.desconto)}%'),
-                    Text('Valor: ${formatter.format(solicitacao.valor)}'),
+                        'Desconto: ${formatter.format(solicitacao.solicitacao.desconto)}%'),
+                    Text(
+                        'Valor: ${formatter.format(solicitacao.solicitacao.valor)}'),
                     //Text('>')
                   ],
                 ),

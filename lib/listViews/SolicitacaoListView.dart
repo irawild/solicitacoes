@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:solicitacoes_desconto/entities/Solicitacao.dart';
+import 'package:solicitacoes_desconto/entities/SolicitacaoPackageData.dart';
 import 'package:solicitacoes_desconto/services/SolicitacaoService.dart';
 import 'package:solicitacoes_desconto/viewItems/SolicitacaoViewItem.dart';
 import 'package:solicitacoes_desconto/views/SolicitacaoDetailView.dart';
@@ -30,7 +31,7 @@ class _SolicitacaoListViewState extends State<SolicitacaoListView> {
 
     //Disparado quando o usuário toca em um item do ListView
     //Quem dispara é a classe SolicitacaoViewItem
-    void _handleItemTap(Solicitacao solicitacao) {
+    void _handleItemTap(SolicitacaoPackageData solicitacao) {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) {
